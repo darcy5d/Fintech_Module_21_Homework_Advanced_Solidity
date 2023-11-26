@@ -22,15 +22,21 @@ This project involves the development of a new cryptocurrency named KaseiKoin (K
 - Inherits from OpenZeppelin's `Crowdsale` and `MintedCrowdsale` contracts.
 - Allows users to send Ether to the contract and receive KaseiKoin tokens in return.
 
-![Screenshot 3](https://github.com/darcy5d/Fintech_Module_20_Homework_Solidity_and_Remix/blob/main/Execution_Results/step-3_2-send-10-ether-as-wei.png?raw=true)
+![Deployed KaseiKoin Contract](https://github.com/darcy5d/Fintech_Module_21_Homework_Advanced_Solidity/blob/main/screenshots/step_1-1_contract-compilation.png?raw=true)
+
+![Deployed Developer](https://github.com/darcy5d/Fintech_Module_21_Homework_Advanced_Solidity/blob/main/screenshots/step_2-1_contract-compilation-KaseiKoinCrowdsale.png?raw=true)
+
+![Deployed Contracts](https://github.com/darcy5d/Fintech_Module_21_Homework_Advanced_Solidity/blob/main/screenshots/step_3-1_contract-compilation-KaseiKoinCrowdsaleDeveloper.png?raw=true)
 
 ### Deployment and Testing
 - Contracts were deployed and tested on a local Ganache blockchain.
 - MetaMask was used to interact with the contracts for testing purposes.
-- Various scenarios, including token purchasing and rate verification, were tested.
+- Various scenarios, including token purchasing and rate verification, were attempted.  Unfortunately this was not successfully completed
 
 ## Challenges and eventual Failure to transact on smart contract
 - Understanding the intricacies of ERC-20 token standard and crowdsale mechanism.
 - Gained experience in smart contract development using Solidity.
 - Learned debugging and testing smart contracts using Remix, Ganache, and MetaMask.
-- Eventually failed in transacting on the contract
+- Eventually failed in transacting on the contract (see below GIF)
+
+![Failed Transactions](https://github.com/darcy5d/Fintech_Module_21_Homework_Advanced_Solidity/blob/main/screenshots/step_4-4_fail.gif?raw=true)
