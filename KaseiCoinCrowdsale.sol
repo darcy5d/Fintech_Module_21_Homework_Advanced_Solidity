@@ -11,46 +11,48 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5
 contract KaseiKoinCrowdsale is Crowdsale, MintedCrowdsale {
     
         constructor(
-        uint rate,
+        uint256 rate,
         address payable wallet,
         KaseiKoin token
     
-    ) 
-    public Crowdsale(rate, wallet, token) 
-    
+    ) public Crowdsale(rate, wallet, token)
     {
-        // constructor can stay empty
+        // constructor body can stay empty
     }
 }
 
 
-contract KaseiCoinCrowdsaleDeployer {
+contract KaseiKoinCrowdsaleDeployer {
     // Create an `address public` variable called `kasei_token_address`.
-    // YOUR CODE HERE!
+    address public kasei_token_address;
+
     // Create an `address public` variable called `kasei_crowdsale_address`.
-    // YOUR CODE HERE!
+    address public kasei_crowdsale_address;
 
     // Add the constructor.
     constructor(
-       // YOUR CODE HERE!
-    ) public {
+       string memory name,
+       string memory symbol,
+       address payable wallet
+    ) 
+        public 
+    {
         // Create a new instance of the KaseiCoin contract.
-        // YOUR CODE HERE!
+        KaseiKoin token = new KaseiKoin(name, symbol, 0);
         
         // Assign the token contract’s address to the `kasei_token_address` variable.
-        // YOUR CODE HERE!
+        kasei_token_address = address(token);
 
         // Create a new instance of the `KaseiCoinCrowdsale` contract
-        // YOUR CODE HERE!
+        KaseiKoinCrowdsale kasei_koin_crowdsale = new KaseiKoinCrowdsale(1, wallet, token);
             
         // Aassign the `KaseiCoinCrowdsale` contract’s address to the `kasei_crowdsale_address` variable.
-        // YOUR CODE HERE!
+        kasei_crowdsale_address = address(kasei_koin_crowdsale);
 
         // Set the `KaseiCoinCrowdsale` contract as a minter
-        // YOUR CODE HERE!
+        token.addMinter(kasei_crowdsale_address);
         
         // Have the `KaseiCoinCrowdsaleDeployer` renounce its minter role.
-        // YOUR CODE HERE!
+        token.renounceMinter();
     }
 }
-*/
